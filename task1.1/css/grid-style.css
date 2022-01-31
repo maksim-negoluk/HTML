@@ -8,20 +8,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   background: transparent;
 }
 
-.container,
-html,
-body {
-  height: 100%;
-}
-
 .container {
   display: grid;
   grid-template-columns: [first] 100%;
-  grid-template-rows: [first] 10% [second] 10% [third] 60% [fourth] 10% [fifth] 10%;
+  grid-template-rows: [first] minmax(10vh, max-content) [second] minmax(10vh, max-content)
+                      [third] minmax(60vh, max-content) [fourth] minmax(10vh, max-content)
+                      [fifth] minmax(10vh, max-content);
   grid-template-areas:
         "header"
         "nav-bar"
-        "article-block"
+        "content-block"
         "links-block"
         "footer";
 }
@@ -41,7 +37,7 @@ body {
   text-align: center;
 }
 
-/* Nav-bar */
+/* Navigation*/
 
 .nav-bar {
   background-color: orange;
@@ -49,23 +45,23 @@ body {
   grid-area: nav-bar;
 }
 
-/*Article-block*/
+/*Content*/
 
-.article-block {
+.content-block {
   background-color: white;
-  grid-area: article-block;
+  grid-area: content-block;
 }
 
-.article-title {
+.content-title {
   font-size: 1.4em;
   margin: 0 0 10px 0;
 }
 
-.article {
+.content {
   font-size: 1.1em;
 }
 
-/*Links-block*/
+/*Links*/
 
 .links-block {
   background-color: darkviolet;
@@ -87,10 +83,11 @@ body {
 
   .container {
     grid-template-columns: [first] 20% [second] 60% [third] 20%;
-    grid-template-rows: [first] 10% [second] 80% [third] 10%;
+    grid-template-rows: [first] minmax(10vh, max-content) [second] minmax(80vh, max-content)
+                        [third] minmax(10vh, max-content);
     grid-template-areas:
             "header header header"
-            "nav-bar article-block links-block"
+            "nav-bar content-block links-block"
             "footer footer footer";
   }
 

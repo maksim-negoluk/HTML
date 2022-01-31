@@ -8,12 +8,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   background: transparent;
 }
 
-.container,
-html,
-body {
-  height: 100%;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -27,48 +21,54 @@ body {
   color: white;
   display: flex;
   font-size: 1.8em;
-  height: 10%;
+  min-height: 10vh;
   justify-content: center;
 }
 
-/* Content */
+/* Main-block */
 
-.content-block {
+.main-block {
   display: flex;
   flex: 2;
   flex-wrap: wrap;
 }
 
-.content-block > * {
+.main-block > * {
   box-sizing: border-box;
   padding: 20px;
   width: 100%;
 }
 
+/*Navigation*/
+
 .nav-bar {
   background-color: orange;
   font-size: 1.2em;
-  height: 10%;
+  min-height: 10vh;
 }
 
-.article-block {
+/*Content*/
+
+.content-block {
   background-color: white;
-  height: 80%;
+  min-height: 60vh;
 }
 
-.article-title {
+.content-title {
   font-size: 1.4em;
   margin: 0 0 10px 0;
 }
 
-.article {
+.content {
   font-size: 1.1em;
 }
+
+/*Links*/
 
 .links-block {
   background-color: darkviolet;
   font-size: 1.2em;
-  height: 10%;
+  min-height: 10vh;
 }
 
 /* Footer */
@@ -79,27 +79,22 @@ body {
   color: white;
   display: flex;
   font-size: 1.8em;
-  height: 10%;
+  min-height: 10vh;
   justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
 
-  .content-block {
+  .main-block {
     flex-wrap: nowrap;
-  }
-
-  .nav-bar,
-  .article-block,
-  .links-block {
-    height: 100%;
   }
 
   .nav-bar {
     width: 20%;
   }
 
-  .article-block {
+  .content-block {
+    min-height: 80vh;
     width: 60%;
   }
 
