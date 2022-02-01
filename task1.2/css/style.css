@@ -1,0 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-wrap {
+  width: 100vw;
+}
+
+.title-block {
+  padding: 20px;
+}
+
+.main-story {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 40px 0;
+}
+
+.main-story-image {
+  width: 100%;
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 4em;
+}
+h1, h2 {
+  margin: 0 0 10px 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em;
+}
+
+.sub-stories {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-story {
+  font-size: 80%;
+  margin: 0 0 40px 0;
+  width: fit-content;
+}
+
+.sub-story-picture {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .sub-stories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sub-story {
+    flex-basis: 35%;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+
+  .sub-stories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sub-story {
+    flex-basis: 26%;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .page-wrap {
+    background-color: gray;
+  }
+
+  .sub-stories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sub-story {
+    flex-basis: 26%;
+  }
+
+}
