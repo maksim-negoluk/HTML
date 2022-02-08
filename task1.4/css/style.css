@@ -1,12 +1,14 @@
 @font-face {
-  font-family : 'Roboto';
-  font-style : normal;
-  font-weight : 300;
-  font-display : swap;
-  src : url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5vAw.ttf)
+    format("truetype");
 }
 
-html, body {
+html,
+body {
   margin: 0;
 }
 
@@ -75,14 +77,14 @@ html, body {
 }
 
 .old-price:before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 40%;
-  right: 0;
   border-top: 3px solid;
   border-color: inherit;
-  transform:rotate(7deg);
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 40%;
+  transform: rotate(7deg);
+  right: 0;
 }
 
 .item-description {
@@ -162,8 +164,7 @@ html, body {
   color: #f7cb2a;
 }
 
-@media screen and (min-width: 768px){
-
+@media screen and (min-width: 768px) {
   .wrapper {
     flex-direction: row;
   }
@@ -185,5 +186,4 @@ html, body {
   .secondary-item-block {
     justify-content: space-around;
   }
-
 }
