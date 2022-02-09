@@ -1,0 +1,17 @@
+.content-block {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-block span {
+  font-size: 1.6em;
+  color: black;
+  margin: 0 0 10px 0;
+}
+
+.map {
+  align-self: center;
+  margin: 0 auto;
+  max-width: 80%;
+}
