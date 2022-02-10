@@ -1,0 +1,15 @@
+$backgroundColor: red;
+
+html {
+  font-family: generalFont;
+}
+body {
+  p {
+    color: $backgroundColor;
+  }
+  div {
+    background: url("../images/23054-6-motorbike-hd_400x400.png");
+    width: 400px;
+    height: 400px;
+  }
+}
