@@ -1,2 +1,97 @@
-@use 'global';
-@use 'fonts';
+$title-gradient: linear-gradient(
+  0deg,
+  rgba(184, 184, 184, 1) 10%,
+  rgba(246, 246, 246, 1) 100%
+);
+$unconfirmed-color: #6e6d6d;
+$confirmed-color: #45bf43;
+$border-color: #bdbfbd;
+
+%centering-flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+%checkbox {
+  border: 2px solid $unconfirmed-color;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+
+%checkmark {
+  border: solid $confirmed-color;
+  border-width: 0 3px 3px 0;
+  content: "";
+  height: 10px;
+  margin: 0 0 3px 0;
+  transform: rotate(45deg);
+  width: 5px;
+}
+
+body,
+html {
+  height: 100vh;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100%;
+  @extend %centering-flex;
+
+  .todo-list {
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    max-width: 60%;
+
+    .title {
+      background: $title-gradient;
+      color: #404040;
+      font-size: 1.4em;
+      padding: 10px 0 10px 20px;
+    }
+    .task {
+      @extend %centering-flex;
+      border-top: 1px solid $border-color;
+      justify-content: flex-start;
+      min-height: 20px;
+      padding: 10px 0 10px 20px;
+
+      & input {
+        display: none;
+
+        &:checked ~ .checkbox {
+          border-color: $confirmed-color;
+        }
+
+        &:checked ~ .checkbox:after {
+          display: block;
+        }
+
+        &:checked ~ .task-text {
+          color: $confirmed-color;
+          text-decoration: line-through $confirmed-color;
+        }
+      }
+
+      .checkbox {
+        @extend %centering-flex;
+        @extend %checkbox;
+        margin: 0 10px 0 0;
+
+        &:after {
+          @extend %checkmark;
+          display: none;
+        }
+      }
+
+      .task-text {
+        color: $unconfirmed-color;
+        font-size: 1.2em;
+        width: 75%;
+      }
+    }
+  }
+}
