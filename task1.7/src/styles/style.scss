@@ -1,0 +1,95 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+@mixin star($star-size, $star-color) {
+  border-bottom: 0.7em solid $star-color;
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  display: block;
+  font-size: $star-size;
+  height: 0;
+  margin: 1em auto;
+  position: relative;
+  transform: rotate(35deg);
+  width: 0;
+
+  &:before {
+    border-bottom: 0.8em solid $star-color;
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    left: -0.65em;
+    position: absolute;
+    top: -0.45em;
+    transform: rotate(-35deg);
+    width: 0;
+  }
+  &:after {
+    border-bottom: 0.7em solid $star-color;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    left: -1.05em;
+    top: 0.03em;
+    transform: rotate(-70deg);
+    width: 0;
+  }
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  .button {
+    align-items: center;
+    background: linear-gradient(
+      0deg,
+      rgba(163, 163, 163, 1) 10%,
+      rgba(231, 231, 231, 1) 98%
+    );
+    border: 1px solid #666;
+    border-radius: 10px;
+    box-shadow:
+      1px 1px 2px 1px #666,
+      0 0 0 6px #cbcbcb,
+      0 0 0 8px #fff,
+      0 0 0 10px #666;
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+    width: clamp(200px, 25%, 300px);
+
+    .star {
+      @include star(clamp(1em, 1.5vw, 1.4em), #888);
+    }
+
+    .button-text {
+      color: #555;
+      font-size: clamp(1.4em, 10vw, 2vw);
+      font-weight: 600;
+    }
+
+    &:active {
+      background: linear-gradient(
+        0deg,
+        rgba(136, 136, 136, 1) 0%,
+        rgba(213, 213, 213, 1) 100%
+      );
+      box-shadow:
+        1px 1px 2px 1px #666,
+        0 0 0 5px #cbcbcb,
+        0 0 0 7px #fff,
+        0 0 0 9px #666;
+    }
+  }
+}
