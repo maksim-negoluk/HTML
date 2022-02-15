@@ -12,9 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
     "cross-env": "^7.0.3",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "postcss-loader": "^6.2.1",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
   },
@@ -22,12 +24,19 @@
     "css-loader": "^6.6.0",
     "mini-css-extract-plugin": "^2.5.3",
     "postcss": "^8.4.6",
-    "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.3.1",
     "prettier": "^2.5.1",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "webpack-dev-server": "^4.7.4"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
 }
